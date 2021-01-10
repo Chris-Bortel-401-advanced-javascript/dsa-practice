@@ -11,21 +11,17 @@ queue.enqueue(10);
 queue.enqueue(8);
 // console.log(JSON.stringify(queue,undefined,2));
 
-// console.log(queue);
-console.log('PROBLEM DOMAIN: Given a Queue, Find the maximum value ... Iteratively.');
+// console.log('PROBLEM DOMAIN: Given a Queue, Find the maximum value ... Iteratively.');
 
 let maxValue = 0;
 while (queue.peek()){
   let current = queue.dequeue();
-  // console.log(current)
   if(maxValue < current ) {
     maxValue = current;
-  } 
-
-  
+  }
 }
-console.log(maxValue)
-return maxValue
+console.log(maxValue);
+return maxValue;
 
 
 
@@ -54,10 +50,10 @@ return maxValue
 // function traverseRecursively(queue){
 //   // Base Case
 //   if(!queue.peek()) {return; }
-//   //Process 
+//   //Process
 //   let person = queue.dequeue();
 //   console.log(person);
-  
+
 //   traverseRecursively(queue);
 // }
 
