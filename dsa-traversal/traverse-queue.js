@@ -1,60 +1,60 @@
-'use strict';
+const Queue = require('../dsa-implementation/queues.js');
 
-const Queue = require('./queue')
+let classQueue = new Queue();
 
-let familyQueue = new Queue();
+classQueue.enqueue('Joe');
+classQueue.enqueue('Ryan');
+classQueue.enqueue('Edgar');
+classQueue.enqueue('Jonny');
 
-familyQueue.enqueue('John');
-familyQueue.enqueue('Cathy');
-familyQueue.enqueue('Zachary');
-familyQueue.enqueue('Allie');
+// shows in the console
+console.log(JSON.stringify(classQueue, undefined, 2));
 
-// console.log(JSON.stringify(familyQueue, undefined, 2));
+//  //  // -----------------------------
+//  //  // ----- Traversal Iteratively:
+//  //  // -----------------------------
 
 console.log('Traverse Iteratively');
 
-while (familyQueue.peek()) {
-
-  // Process the current node
-  let person = familyQueue.dequeue();
+// peek will return either the head of the queue or null.. so while there is something in the queue, continue on... First in First Out 
+while( classQueue.peek() ){
+  // do stuff.. take the First person out of the queue
+  let person = classQueue.dequeue();
   console.log(person);
 
+  // continue on to the next since there are still things in the queue
+
 }
+
+//  //  // ----------------------------
+//  //  // ----- Traversal Recursively: 
+//  //  // ----------------------------
 
 console.log('Traverse Recursively');
 
-familyQueue.enqueue('John');
-familyQueue.enqueue('Cathy');
-familyQueue.enqueue('Zachary');
-familyQueue.enqueue('Allie');
+function traverseQRecursively(queue){
+  // base case
+  if( !queue.peek() ) { return; }
 
-function traverseRecursively(queue) {
-  // Base Case
-  if (!queue.peek()) { return; }
-
-  // Process
   let person = queue.dequeue();
   console.log(person);
 
-  traverseRecursively(queue)
-
+  // each time you have dequeued, you are throwing the queue minus the dequeued value back in in order to run it again
+  traverseQRecursively(queue);
 }
 
-traverseRecursively(familyQueue);
+//  //  // ---------------------------------------------- 
+//  //  // ----- Traversal Recursively w returning an array:
+//  //  // ---------------------------------------------- 
 
+function traverseQRecursivelyWReturnArray(queue, list=[]);{
+  // base case: keep going until list is empty
+  if( ! queue.peek() ) { return list; }
 
-console.log('Traverse Recursively with return / array');
-
-familyQueue.enqueue('John');
-familyQueue.enqueue('Cathy');
-familyQueue.enqueue('Zachary');
-familyQueue.enqueue('Allie');
-
-function traverseRecursivelyWithReturnArray(queue, list = []) {
-  if (!queue.peek()) { return list; }
+  // take a person out of the queue, add that person to the list, and then return the remaining queue into the list array
   let person = queue.dequeue();
   list.push(person);
-  return traverseRecursivelyWithReturnArray(queue, list);
+  return traverseQRecursivelyWReturnArray(queue, list);
 }
 
-console.log(traverseRecursivelyWithReturnArray(familyQueue));
+console.log(traverseQRecursivelyWReturnArray);
