@@ -28,7 +28,7 @@ while(queue.peek()){
   }
 }
 console.log(minVal);
-
+return minVal;
 
 
 
