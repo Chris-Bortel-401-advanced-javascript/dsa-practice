@@ -114,16 +114,46 @@ class BST {
   }
 
   dfsPostOrder() {
-    let result = []
+    let result = [];
 
     const traverse = node=> {
-      if (node.left) traverse(node.left)
-      if (node.right) traverse(node.right)
-      result.push(node.value)
-    }
-    traverse(this.root)
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      result.push(node.value);
+    };
+    traverse(this.root);
 
-    return result
+    return result;
+  }
+
+  minValRecursive() {
+    let result = [];
+
+    const traverse = node => {
+      if (node.left) traverse(node.left);
+      // console.log(node.left)
+      result.push(node.value);
+      // if (node.right) traverse(node.right);
+    };
+
+    traverse(this.root);
+
+    return result[0];
+  }
+
+  maxValRecursive() {
+    let result = [];
+
+    const traverse = node => {
+      if (node.right) traverse(node.right);
+      // console.log(node.left)
+      result.push(node.value);
+      // if (node.right) traverse(node.right);
+    };
+
+    traverse(this.root);
+
+    return result[0];
   }
 }
 
@@ -139,3 +169,6 @@ bst.insert(39);
 console.log(bst.dfsInOrder());
 console.log(bst.dfsPreOrder());
 console.log(bst.dfsPostOrder());
+console.log(bst.minValRecursive());
+console.log(bst.maxValRecursive());
+

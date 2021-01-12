@@ -1,8 +1,8 @@
 'use strict';
 
-const Bst = require('../index.js[');
+const Bst = require('../index');
 
-let bst = new Bst(15);
+let bst = new Bst();
 
 
 bst.insert(3);
@@ -13,6 +13,7 @@ bst.insert(28);
 bst.insert(39);
 
 // console.log(JSON.stringify(bst,undefined,2));
+console.log(bst.minValRecursive());
 
 // console.log('Given a BST, Find the minimum value ... Recursively.');
 
@@ -32,7 +33,6 @@ minValRecursive() {
   return result[0];
 }
 
-console.log(bst.minValRecursive());
 
 
 
