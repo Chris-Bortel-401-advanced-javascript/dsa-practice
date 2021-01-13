@@ -8,3 +8,4 @@ This repo is for DSA practice
 - [Given a Array, Remove all duplicate values/keys ... Iteratively.](code-challenges/arrays/remove-dups/README.md)
 
 - [Binary Search Tree Implementation and Traversals](code-challenges/bst/README.md)
+- [Given a linked list, reverse its values... iteratively](code-challenges/bst/README.md)
