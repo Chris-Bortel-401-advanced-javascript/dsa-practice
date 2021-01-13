@@ -1,40 +1,64 @@
 'use strict';
 
-const Stack = require('./stack');
+const Stack = require('../dsa-implementation/stacks.js');
 
 let familyStack = new Stack();
-familyStack.push('John');
-familyStack.push('Cathy');
+// familyStack.push('John');
+// familyStack.push('Cathy');
+// familyStack.push('Zach');
+// familyStack.push('Allie');
+
+// console.log('Iterative Traversal');
+
+// while (familyStack.peek()) {
+//   // Process
+//   let person = familyStack.pop();
+//   console.log(person);
+// }
+
+
+
+
+// familyStack.push('Cathy');
+
+familyStack.push(1);
 familyStack.push('Zach');
 familyStack.push('Allie');
+console.log(familyStack)
 
-console.log('Iterative Traversal');
+function findValueIteratively(target) {
+  while (!familyStack.isEmpty()) {
+    let person = familyStack.pop();
+    console.log(person);
+    if (target === person) {
+      return true;
+    }
+  }
 
-while (familyStack.peek()) {
-  // Process
-  let person = familyStack.pop();
-  console.log(person);
+  return false;
+  // findValueIteratively('John')
 }
+console.log(findValueIteratively('Zach'));
+// console.log('Recursive ...');
 
 
-console.log('Recursive ...');
-familyStack.push('John');
-familyStack.push('Cathy');
-familyStack.push('Zach');
-familyStack.push('Allie');
 
-function iterateRecursively(stack) {
+// familyStack.push('John');
+// familyStack.push('Cathy');
+// familyStack.push('Zach');
+// familyStack.push('Allie');
+// function iterateRecursively(familyStack) {
 
-  // Base Case
-  if (!stack.peek()) { return; }
+//   // Base Case
+//   if (!familyStack.peek()) { return; }
 
-  // Process
-  let person = stack.pop();
-  console.log(person);
+//   // Process
+//   let person = familyStack.pop();
+//   console.log(person);
 
-  // Move the pointer
-  iterateRecursively(stack);
+//   // Move the pointer
+//   iterateRecursively(familyStack);
 
-}
+// }
+// console.log(iterateRecursively(familyStack))
 
-console.log(iterateRecursively(familyStack))
