@@ -32,5 +32,5 @@ stack.push('Allie');
 
 stack.pop();
 
-console.log(stack.peek());
+console.log(stack.peek('Cathy'));
 stack;
