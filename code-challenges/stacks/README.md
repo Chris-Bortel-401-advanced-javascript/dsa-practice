@@ -1,10 +1,14 @@
-## Reverse a linked lists values ... Iteratively.
-## Reverse a linked lists values ... Recursively.
+## Given a stack, return a specific value ... Iteratively.
 
-### [pull request](https://github.com/Chris-Bortel-401-advanced-javascript/dsa-practice/pull/5)
+## Given a stack, return a specific value ... Recursively.
+
+## Given a stack, return all duplicates ... Interatively.
+## Given a stack, return all duplicates ... Recursively.
+
+### [pull request](https://github.com/Chris-Bortel-401-advanced-javascript/dsa-practice/pull/6)
 
 ### White Board
-![White Board](./reverse-iteratively.png)
+<!-- ![White Board](./reverse-iteratively.png) -->
 
 ### Code
 <!-- ![Code](./code.png) -->
