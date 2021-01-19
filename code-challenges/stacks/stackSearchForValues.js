@@ -61,25 +61,36 @@ const HashTable = require('../../dsa-implementation/hashtable.js');
 
 function removeDups(inputStack){
   let outputStack = new Stack()
-  let hashTable = new HashTable( inputStack.size)
+  let hashTable = new HashTable( inputStack.size * 9 )
 
-  for(let i = 0 ; i < inputStack.size; i++){
+  while (!inputStack.isEmpty()){
     
     const currEval = inputStack.pop()
+    console.log(currEval)
     
-    if(!hashTable.contains(i)) {
+    if(!hashTable.contains(currEval)) {
       //put it into hashtable
-      hashTable.add(i, currEval);
+      hashTable.add(currEval, 1 );
+      console.log(currEval)
       // put in into new output stack
-      inputStack.push(currEval);
+    } else {
+      console.log(currEval)
+      
+      outputStack.push(currEval);
     }
   }
   return outputStack
 }
+// if there are more than one duplicate of the same key I will be returning a stack with multiple of that key. 
 
-const familyStack = new Stack()
-familyStack.push(1);
-familyStack.push(1);
-familyStack.push('Allie');
 
-removeDups(familyStack)
+const bigStack = new Stack()
+bigStack.push(1);
+bigStack.push(1);
+bigStack.push('Allie');
+bigStack.push('Allie');
+bigStack.push('joe');
+
+console.log(bigStack.size)
+
+console.log('dups stack',removeDups(bigStack))

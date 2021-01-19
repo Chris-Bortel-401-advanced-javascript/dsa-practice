@@ -8,9 +8,12 @@ class Hashtable {
   }
 
   hash(key) {
-    return key.split('').reduce((acc, cur, i) => {
-      return acc + cur.charCodeAt(0);
-    }, 0) * 599 % this.size;
+    let asciiTotal = 0;
+    for (let i = 0; i < key.length; i++) {
+      asciiTotal += key.charCodeAt(i);
+    }
+    let index = (asciiTotal * 599) % this.size;
+    return index;
   }
 
   add(key,val) {
@@ -43,7 +46,7 @@ const hashTable = new Hashtable(4)
 
 hashTable.add('chris', 'awesome')
 
-console.log(hashTable.get('chris'))
-console.log(hashTable.contains('chris'))
+// console.log(hashTable.get('chris'))
+// console.log(hashTable.contains('chris'))
 
-console.log(hashTable)
+// console.log(hashTable)
