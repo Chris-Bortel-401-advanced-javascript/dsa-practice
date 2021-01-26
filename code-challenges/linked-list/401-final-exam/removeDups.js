@@ -1,64 +1,42 @@
-'use strict'
+'use strict';
 
 const LinkedList = require('./linkedList.js');
-const Hashtable = require('./hashtable.js')
-const list = new LinkedList();
-list.append(3);
-list.append(3);
-list.append(4);
-list.append(5);
-list.append(6);
-list.append(4);
-// console.log(list)
+// const Hashtable = require('./hashtable.js');
+
+// console.log(newList)
+//TODO: try set
+
+// Remove duplicate from a singly linked list, in place
+
+// const LinkedList = require('./linked-list.js');
+
+const newList = new LinkedList();
+newList.append(3);
+newList.append(4);
+newList.append(5);
+newList.append(5);
+newList.append(6);
+newList.append(4);
 
 
-function removeDups() {
-  let seen = new Hashtable();
+function removeDups(list) {
+  let exists = new Set();
   let current = list.head;
-  let previous = null
-  
-  while(!current) {
-    if (seen.contains(current)) {
-      console.log(current.next)
-      previous.next = current.next
-      current = previous.next
+  let previous = null;
+
+  while (current) {
+    if(exists.has(current.value)) {
+      previous.next = current.next;
+      current = previous.next;
     } else {
-      seen.add(current);
+      exists.add(current.value);
       previous = current;
-      current = current.next
-      console.log(seen)
+      current = current.next;
     }
-    return list;
   }
-  console.log(current)
-  console.log(list)
+  return list;
 }
-console.log(removeDups())
 
+removeDups(newList)
+console.log(JSON.stringify(newList,undefined,2));
 
-
-// DECLARE current <-- this.head
-
-// DECLARE previous <-- null
-
-// While there is a current
-
-//  IF current is in the hashtable
-
-//   previous.next<--current.next
-
-//   current.next<--null
-
-//   current<--previous.next
-
-//  ELSE
-
-//   send current to hashtable
-
-//   previous <-- current
-
-//   current <--current.next
-
-
-
-// return linklist

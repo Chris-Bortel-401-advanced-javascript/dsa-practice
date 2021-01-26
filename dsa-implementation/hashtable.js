@@ -42,9 +42,9 @@ class Hashtable {
 
 module.exports = Hashtable;
 
-const hashTable = new Hashtable(4)
+// const hashTable = new Hashtable(4)
 
-hashTable.add('chris', 'awesome')
+// hashTable.add('chris', 'awesome')
 
 // console.log(hashTable.get('chris'))
 // console.log(hashTable.contains('chris'))
