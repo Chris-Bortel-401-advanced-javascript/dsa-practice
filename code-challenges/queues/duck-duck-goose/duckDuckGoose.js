@@ -1,6 +1,6 @@
 "use strict";
 
-const Queue = require("./index.js");
+const Queue = require("../index.js");
 const duckQueue = new Queue();
 
 duckQueue.enqueue("john");
