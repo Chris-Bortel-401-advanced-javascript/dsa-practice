@@ -69,11 +69,11 @@ module.exports = Queues;
 // }
 
 // class Queue {
-//   constructor() {
-//     this.storage = [];
-//     this.head = null;
-//     this.tail = null;
-//   }
+  constructor() {
+    this.storage = [];
+    this.head = null;
+    this.tail = null;
+  }
 
 //   enqueue(value) {
 //     let node = new Node(value);

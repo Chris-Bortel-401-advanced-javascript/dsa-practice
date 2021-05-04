@@ -2,53 +2,53 @@
 
 const LinkedList = require('./linked-list.js');
 
-// const list = new LinkedList();
-// list.append("Zachary");
-// list.append("John");
-// list.append("Cat");
-// list.append("Allie");
+const list = new LinkedList();
+list.append("Zachary");
+list.append("John");
+list.append("Cat");
+list.append("Allie");
 
-// console.log(JSON.stringify(list, undefined, 2));
+console.log(JSON.stringify(list, undefined, 2));
 
-// console.log('Traverse Iteratively');
-// let current = list.head;
-// while (current) {
+console.log('Traverse Iteratively');
+let current = list.head;
+while (current) {
 
-//   // do some work
-//   console.log(current.value);
+  // do some work
+  console.log(current.value);
 
-//   // Move our pointer
-//   current = current.next;
+  // Move our pointer
+  current = current.next;
 
-// }
+}
 
-// console.log('Traverse recursively');
+console.log('Traverse recursively');
 
-// function traverseLinkedListRecursively(node) {
-//   if (!node) { return; }
+function traverseLinkedListRecursively(node) {
+  if (!node) { return; }
 
-//   // do our work
-//   console.log(node.value);
+  // do our work
+  console.log(node.value);
 
-//   // Move our pointer
-//   traverseLinkedListRecursively(node.next);
-// }
+  // Move our pointer
+  traverseLinkedListRecursively(node.next);
+}
 
-// traverseLinkedListRecursively(list.head);
+traverseLinkedListRecursively(list.head);
 
 
-// console.log('Traverse Recursively w/return value');
+console.log('Traverse Recursively w/return value');
 
-// function traverseLinkedListRecursivelyWithReturn(node, biggestOne = "") {
-//   if (!node) { return biggestOne; }
+function traverseLinkedListRecursivelyWithReturn(node, biggestOne = "") {
+  if (!node) { return biggestOne; }
 
-//   // Do Your Work
-//   if (node.value.length > biggestOne.length) { biggestOne = node.value; }
+  // Do Your Work
+  if (node.value.length > biggestOne.length) { biggestOne = node.value; }
 
-//   return traverseLinkedListRecursivelyWithReturn(node.next, biggestOne);
-// }
+  return traverseLinkedListRecursivelyWithReturn(node.next, biggestOne);
+}
 
-// console.log('Longest Name: ', traverseLinkedListRecursivelyWithReturn(list.head))
+console.log('Longest Name: ', traverseLinkedListRecursivelyWithReturn(list.head))
 
 
 const list = new LinkedList();

@@ -166,6 +166,9 @@ bst.insert(2);
 bst.insert(12);
 bst.insert(28);
 bst.insert(39);
+console.log(JSON.stringify(bst, undefined, 2));
+
+console.log(bst)
 console.log(bst.dfsInOrder());
 console.log(bst.dfsPreOrder());
 console.log(bst.dfsPostOrder());
