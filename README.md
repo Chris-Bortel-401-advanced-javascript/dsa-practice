@@ -8,6 +8,10 @@ This repo is for DSA practice
 - [Given a Queue, Find the minimum value ... Iteratively.](code-challenges/queues/min-val-iterative/README.md)
 - [Duck Duck Goose](code-challenges/queues/duck-duck-goose/README.md)
 
+### Stacks
+
+- [Max Stack](code-challenges/stacks/max-stack/README.md)
+
 - [Given a Array, Remove all duplicate values/keys ... Iteratively.](code-challenges/arrays/remove-dups/README.md)
 
 - [Binary Search Tree Implementation and Traversals](code-challenges/bst/README.md)
